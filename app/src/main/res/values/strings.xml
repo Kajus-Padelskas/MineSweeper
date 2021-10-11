@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MineSweeperV2</string>
+    <string name="GameWon">Game Won</string>
+    <string name="GameLost">Game Lost</string>
+</resources>
