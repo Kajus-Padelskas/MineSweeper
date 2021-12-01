@@ -1,4 +1,4 @@
-package academy.learnprogramming.minesweeperv2.grid
+package academy.learnprogramming.minesweeperv2.refactor
 
 
 class Cell(val pos: Pair<Int, Int>) {
@@ -7,6 +7,7 @@ class Cell(val pos: Pair<Int, Int>) {
     var isFlagged = false
     var isMine = false
     var isRevealed = false
+
     override fun toString(): String {
         return "$value"
     }
