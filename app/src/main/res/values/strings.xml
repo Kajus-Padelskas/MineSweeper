@@ -2,4 +2,6 @@
     <string name="app_name">MineSweeperV2</string>
     <string name="GameWon">Game Won</string>
     <string name="GameLost">Game Lost</string>
+    <string name="restart">Restart</string>
+    <string name="game_in_progress">Game in progress</string>
 </resources>

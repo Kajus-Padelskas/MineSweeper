@@ -1,15 +1,20 @@
-package academy.learnprogramming.minesweeperv2.refactor
+package academy.learnprogramming.minesweeperv2.layout
 
-open class Board(val width: Int, val height: Int){
+import academy.learnprogramming.minesweeperv2.dataStructure.Cell
 
-    protected val board = CellGenerator.generateCells(width, height)
+open class Board protected constructor(){
+    lateinit var board : List<List<Cell>>
+    protected var width = 0
+    protected var height = 0
 
-    fun getCell(y : Int, x: Int) = board[y][x]
+    constructor(width: Int, height: Int) : this() {
+        this.width = width
+        this.height = height
+        this.board = CellGenerator.generateCells(width, height)
+    }
 
     fun getAdjacentCells(y : Int, x: Int) : List<Cell> {
-
         val adjacentCells: ArrayList<Cell> = ArrayList()
-
         if(y + 1 < height) adjacentCells.add(board[y+1][x])
         if(y - 1 >= 0) adjacentCells.add(board[y-1][x])
         if(x + 1 < width) adjacentCells.add(board[y][x+1])
@@ -18,8 +23,6 @@ open class Board(val width: Int, val height: Int){
         if(y + 1 < height && x - 1 >= 0) adjacentCells.add(board[y+1][x-1])
         if(y - 1 >= 0 && x + 1 < width) adjacentCells.add(board[y-1][x+1])
         if(y - 1 >= 0 && x - 1 >= 0) adjacentCells.add(board[y-1][x-1])
-
         return adjacentCells.toList()
     }
-
 }

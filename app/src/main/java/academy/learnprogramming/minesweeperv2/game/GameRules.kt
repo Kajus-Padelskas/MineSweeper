@@ -1,4 +1,4 @@
-package academy.learnprogramming.minesweeperv2.refactor
+package academy.learnprogramming.minesweeperv2.game
 
 interface GameRules {
     fun isGameWon() : Boolean

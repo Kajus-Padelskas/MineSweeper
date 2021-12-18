@@ -1,7 +1,7 @@
-package academy.learnprogramming.minesweeperv2.refactor
+package academy.learnprogramming.minesweeperv2.dataStructure
 
 
-class Cell(val pos: Pair<Int, Int>) {
+open class Cell(val pos: Pair<Int, Int>) {
 
     var value = 0
     var isFlagged = false
