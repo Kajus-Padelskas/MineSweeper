@@ -26,9 +26,9 @@ class MineSweeperRecyclerAdapter(
     inner class CellHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
 
         init {
-            tvGameStatus = view.findViewById(R.id.tvGameStatus)
-            tvCell = view.findViewById(R.id.cellValue)
+            tvGameStatus = activity.findViewById(R.id.tvGameStatus)
             bFlag = activity.findViewById(R.id.buttonFlag)
+            tvCell = view.findViewById(R.id.cellValue)
             bFlag.setOnClickListener {
                 bFlag.isSelected = !bFlag.isSelected
             }

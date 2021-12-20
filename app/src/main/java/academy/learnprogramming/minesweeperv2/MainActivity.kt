@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var restartButton: Button
     private lateinit var tvGameStatus: TextView
 
@@ -19,12 +20,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun launch(){
         restartButton = findViewById(R.id.buttonReset)
-        tvGameStatus = findViewById(R.id.tvGameStatus)
         restartButton.setOnClickListener {
             launch()
             restartButton.text = getString(R.string.restart)
         }
         val game = MineSweeperGameRender
         game.render(this, MineSweeper(boardWidth = 10, boardHeight = 10, mineAmount = 10))
+        tvGameStatus = findViewById(R.id.tvGameStatus)
+        tvGameStatus.text = getString(R.string.game_in_progress)
     }
 }

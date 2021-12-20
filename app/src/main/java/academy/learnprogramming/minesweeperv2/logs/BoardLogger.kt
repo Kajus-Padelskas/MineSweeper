@@ -12,7 +12,6 @@ class BoardLogger(private val board: Board) : Logger {
             }
             println()
         }
-        println()
     }
 
 }

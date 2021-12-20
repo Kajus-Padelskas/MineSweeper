@@ -30,7 +30,7 @@ class MineSweeper(val boardWidth: Int, val boardHeight: Int, mineAmount: Int) : 
 
     fun setFlag(y: Int, x: Int): Cell {
         val currentCell = board[y][x]
-        currentCell.isFlagged = board[y][x].isFlagged
+        currentCell.isFlagged = !board[y][x].isFlagged
         return board[y][x]
     }
 

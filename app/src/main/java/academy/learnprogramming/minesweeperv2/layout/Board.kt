@@ -2,12 +2,12 @@ package academy.learnprogramming.minesweeperv2.layout
 
 import academy.learnprogramming.minesweeperv2.dataStructure.Cell
 
-open class Board protected constructor(){
-    lateinit var board : List<List<Cell>>
+open class Board(width: Int, height: Int) {
+    var board : List<List<Cell>>
     protected var width = 0
     protected var height = 0
 
-    constructor(width: Int, height: Int) : this() {
+    init {
         this.width = width
         this.height = height
         this.board = CellGenerator.generateCells(width, height)
@@ -24,5 +24,9 @@ open class Board protected constructor(){
         if(y - 1 >= 0 && x + 1 < width) adjacentCells.add(board[y-1][x+1])
         if(y - 1 >= 0 && x - 1 >= 0) adjacentCells.add(board[y-1][x-1])
         return adjacentCells.toList()
+    }
+
+    fun getCell(y: Int, x: Int) : Cell{
+        return board[y][x]
     }
 }
